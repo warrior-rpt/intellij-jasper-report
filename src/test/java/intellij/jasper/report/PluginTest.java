@@ -1,5 +1,6 @@
-package test.java.intellij.jasper.report;
+package intellij.jasper.report;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.testFramework.fixtures.BasePlatformTestCase;
 
 public class PluginTest extends BasePlatformTestCase {

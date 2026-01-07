@@ -34,9 +34,8 @@ Copyright (c) 2024 warrior-rpt
 
     <change-notes><![CDATA[
       Release 1.0.1: v1.0.1<br>
-      - Extended compatibility to latest IntelliJ versions.<br>
-      Release 1.0.0: v1.0.0<br>
-      - Added support for Intellij 2024.2<br>
+      - Fixed build issues and improved compatibility.<br>
+      - Fixed IconLoader resolution issue for IntelliJ 2025.3.<br>
     ]]>
     </change-notes>
     <depends>com.intellij.modules.platform</depends>

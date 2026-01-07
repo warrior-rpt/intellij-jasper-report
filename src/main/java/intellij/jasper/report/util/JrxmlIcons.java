@@ -23,10 +23,11 @@
  */
 package intellij.jasper.report.util;
 
-import com.intellij.openapi.util.IconLoader;
+import com.intellij.ui.IconManager;
 
 import javax.swing.*;
 
 public class JrxmlIcons {
-    public static final Icon FILE = IconLoader.getIcon("/intellij/jasper/report/icons/jrxml.png");
+    public static final Icon FILE = IconManager.getInstance().getIcon("/intellij/jasper/report/icons/jrxml.png",
+            JrxmlIcons.class);
 }
