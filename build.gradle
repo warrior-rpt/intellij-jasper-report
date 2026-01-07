@@ -12,7 +12,7 @@ java {
 }
 
 group = 'intellij.jasper.report'
-version = '1.0.2' // Set your plugin's version here
+// version is defined in gradle.properties
 
 repositories {
     mavenCentral()
