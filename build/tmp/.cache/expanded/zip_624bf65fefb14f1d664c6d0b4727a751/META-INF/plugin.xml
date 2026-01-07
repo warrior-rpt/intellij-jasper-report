@@ -1,0 +1,41 @@
+<!--
+ The MIT License (MIT)
+
+ Copyright (c) 2024 Rithin Paul
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+-->
+<idea-plugin url="https://github.com/rithin123/intellij-jasper-report-support">
+  <idea-version since-build="243.21565" until-build="243.*" />
+  <id>intellij.jasper-report</id>
+  <name>Jasper Report</name>
+  <version>1.0.0</version>
+  <vendor email="ritn007@gmail.com">ritn</vendor>
+  <description><![CDATA[This plugin will enable Jasper Report support within Intellij Idea.<br>]]></description>
+  <change-notes><![CDATA[Release 2.0.0: v2.0.0<br>
+      - Added support for Intellij 2024.3<br>]]></change-notes>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Jasper source file" implementationClass="intellij.jasper.report.file.type.jrxml.JrxmlFileType" fieldName="INSTANCE" language="XML" extensions="jrxml" />
+    <lang.parserDefinition language="Jrxml" implementationClass="intellij.jasper.report.lang.jrxml.JrxmlParserDefinition" />
+    <xml.schemaProvider implementation="intellij.jasper.report.lang.jrxml.autocomplete.JrxmlSchemaProvider" />
+  </extensions>
+  <actions />
+</idea-plugin>

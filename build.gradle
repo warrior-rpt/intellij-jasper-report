@@ -2,7 +2,7 @@ import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
     id 'java'
-    id("org.jetbrains.intellij.platform") version "2.1.0"
+    id("org.jetbrains.intellij.platform") version "2.10.5"
 }
 
 java {
@@ -12,7 +12,7 @@ java {
 }
 
 group = 'intellij.jasper.report'
-version = '1.0.0' // Set your plugin's version here
+version = '1.0.2' // Set your plugin's version here
 
 repositories {
     mavenCentral()
@@ -24,9 +24,9 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity '2024.2'
+        intellijIdea '2025.3'
 
-        bundledPlugin 'com.intellij.java'
+        // bundledPlugin 'com.intellij.java'
 
         pluginVerifier()
         zipSigner()
@@ -38,5 +38,17 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     // other dependencies, e.g., 3rd-party libraries
 }
+
+intellijPlatform {
+    pluginVerification {
+        ides {
+            recommended()
+        }
+    }
+}
+
+
 patchPluginXml {
+    sinceBuild = "253"
+    untilBuild = provider { null }
 }
