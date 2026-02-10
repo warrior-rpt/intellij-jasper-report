@@ -25,7 +25,7 @@ Copyright (c) 2024 warrior-rpt
 <idea-plugin url="https://github.com/warrior-rpt/intellij-jasper-report">
     <id>jasper-report</id>
     <name>Jasper Report</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <vendor email="ritn007@gmail.com">warrior-rpt</vendor>
 
     <description><![CDATA[
@@ -33,9 +33,10 @@ Copyright (c) 2024 warrior-rpt
     ]]></description>
 
     <change-notes><![CDATA[
-      Release 1.0.1: v1.0.1<br>
-      - Fixed build issues and improved compatibility.<br>
-      - Fixed IconLoader resolution issue for IntelliJ 2025.3.<br>
+      Release 1.0.2: v1.0.2<br>
+      - Upgraded IntelliJ Platform to 2025.3.2.<br>
+      - Upgraded IntelliJ Platform Gradle Plugin to 2.11.0.<br>
+      - Fixed deprecated API usage for improved compatibility with future IDE versions.<br>
     ]]>
     </change-notes>
     <depends>com.intellij.modules.platform</depends>

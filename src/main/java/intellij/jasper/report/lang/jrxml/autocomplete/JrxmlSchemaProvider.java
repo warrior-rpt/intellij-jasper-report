@@ -27,7 +27,7 @@ import java.net.URL;
 
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
@@ -53,7 +53,7 @@ public class JrxmlSchemaProvider extends XmlSchemaProvider {
 
     private static XmlFile getReference(@NotNull Module module) {
         final URL resource = JrxmlSchemaProvider.class.getResource("/intellij/jasper/report/xsd/jasperreport.xsd");
-        final VirtualFile fileByURL = VfsUtil.findFileByURL(resource);
+        final VirtualFile fileByURL = VirtualFileManager.getInstance().findFileByUrl(resource.toExternalForm());
         if (fileByURL == null) {
             LOG.error("xsd not found");
             return null;
@@ -61,6 +61,6 @@ public class JrxmlSchemaProvider extends XmlSchemaProvider {
 
         PsiFile psiFile = PsiManager.getInstance(module.getProject()).findFile(fileByURL);
         LOG.assertTrue(psiFile != null);
-        return (XmlFile)psiFile.copy();
+        return (XmlFile) psiFile.copy();
     }
 }

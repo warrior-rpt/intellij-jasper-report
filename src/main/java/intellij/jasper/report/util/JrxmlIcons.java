@@ -29,5 +29,5 @@ import javax.swing.*;
 
 public class JrxmlIcons {
     public static final Icon FILE = IconManager.getInstance().getIcon("/intellij/jasper/report/icons/jrxml.png",
-            JrxmlIcons.class);
+            JrxmlIcons.class.getClassLoader());
 }

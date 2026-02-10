@@ -2,7 +2,7 @@ import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
     id 'java'
-    id("org.jetbrains.intellij.platform") version "2.10.5"
+    id("org.jetbrains.intellij.platform") version "2.11.0"
 }
 
 java {
@@ -24,7 +24,7 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdea '2025.3'
+        intellijIdea ideaVersion
 
         // bundledPlugin 'com.intellij.java'
 
