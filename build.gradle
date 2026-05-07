@@ -2,7 +2,7 @@ import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
     id 'java'
-    id("org.jetbrains.intellij.platform") version "2.11.0"
+    id("org.jetbrains.intellij.platform") version "2.13.1"
 }
 
 java {
@@ -30,7 +30,6 @@ dependencies {
 
         pluginVerifier()
         zipSigner()
-        instrumentationTools()
 
         testFramework TestFrameworkType.Platform.INSTANCE
     }
@@ -45,10 +44,11 @@ intellijPlatform {
             recommended()
         }
     }
-}
 
-
-patchPluginXml {
-    sinceBuild = "253"
-    untilBuild = provider { null }
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild = "253"
+            untilBuild = provider { null }
+        }
+    }
 }
