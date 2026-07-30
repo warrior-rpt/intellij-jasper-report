@@ -23,12 +23,12 @@
  */
 package intellij.jasper.report.lang.jrxml;
 
-import com.intellij.lang.Language;
 import com.intellij.lang.xml.XMLLanguage;
 
 public class JrxmlLanguage extends XMLLanguage {
+    public static final JrxmlLanguage INSTANCE = new JrxmlLanguage();
 
     private JrxmlLanguage() {
-        super((Language) null, "Jrxml", "application/xml", "text/xml");
+        super(XMLLanguage.INSTANCE, "Jrxml", "application/xml", "text/xml");
     }
 }

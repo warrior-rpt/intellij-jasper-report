@@ -25,7 +25,7 @@ Copyright (c) 2024 warrior-rpt
 <idea-plugin url="https://github.com/warrior-rpt/intellij-jasper-report">
     <id>jasper-report</id>
     <name>Jasper Report</name>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <vendor email="ritn007@gmail.com">warrior-rpt</vendor>
 
     <description><![CDATA[
@@ -33,6 +33,9 @@ Copyright (c) 2024 warrior-rpt
     ]]></description>
 
     <change-notes><![CDATA[
+      Release 1.0.4: v1.0.4<br>
+      - Fixed the "Jrxml" language never being registered (its singleton was never instantiated), which silently made .jrxml files fall back to plain XML instead of using the plugin's own language/parser wiring.<br>
+      - Hardened schema resolution against a potential NullPointerException when the XSD's VirtualFile can't be resolved to a PsiFile.<br>
       Release 1.0.3: v1.0.3<br>
       - Fixed "xsd not found" error on plugin startup (switched to VfsUtil.findFileByURL for correct jar:// URL resolution).<br>
       - Upgraded IntelliJ Platform Gradle Plugin to 2.13.1 for compatibility with 2026.1 EAP builds (261.x).<br>
@@ -44,7 +47,7 @@ Copyright (c) 2024 warrior-rpt
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType name="Jasper source file" implementationClass="intellij.jasper.report.file.type.jrxml.JrxmlFileType"
-              fieldName="INSTANCE" language="XML" extensions="jrxml"/>
+              fieldName="INSTANCE" language="Jrxml" extensions="jrxml"/>
         <lang.parserDefinition language="Jrxml" implementationClass="intellij.jasper.report.lang.jrxml.JrxmlParserDefinition"/>
         <xml.schemaProvider implementation="intellij.jasper.report.lang.jrxml.autocomplete.JrxmlSchemaProvider"/>
     </extensions>

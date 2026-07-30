@@ -64,7 +64,10 @@ public class JrxmlSchemaProvider extends XmlSchemaProvider {
         }
 
         PsiFile psiFile = PsiManager.getInstance(module.getProject()).findFile(fileByURL);
-        LOG.assertTrue(psiFile != null);
+        if (psiFile == null) {
+            LOG.error("xsd not found: PsiManager could not resolve file for " + fileByURL);
+            return null;
+        }
         return (XmlFile) psiFile.copy();
     }
 }
