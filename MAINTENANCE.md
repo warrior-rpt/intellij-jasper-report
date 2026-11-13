@@ -50,6 +50,8 @@ How to schedule it (pick one; all keep the owner as approver):
 
 The agent's only outputs are a branch, a PR, and a new row in the log (section 7).
 
+**Status: scheduled** as a Claude Code cloud routine, "Jasper plugin monthly maintenance" (id `trig_01TVc67Ti4xQtMjVnuBgFTLp`, manage/pause at <https://claude.ai/code/routines/trig_01TVc67Ti4xQtMjVnuBgFTLp>). Cron `0 10 15 * *` (UTC): the 15th of each month, 2am Vancouver in winter (3am in summer). Model `claude-sonnet-5-5`, no connectors, repo `warrior-rpt/intellij-jasper-report`. The routine's prompt tells the agent to read `AGENTS.md` and `MAINTENANCE.md` and follow section 4, so **changes to this runbook change what the routine does**. If the routine is ever recreated, copy its prompt from the routine page and update the id here.
+
 ---
 
 ## 3. Policies (decisions the agent must follow, not make)
@@ -152,3 +154,4 @@ Automating step 3 (`publishPlugin` + a Marketplace token in GitHub secrets) is p
 | Date | Run by | Result | PR / notes |
 |---|---|---|---|
 | 2026-11-13 | Claude Code (manual) | Created this runbook, `dependabot.yml`, and `ci.yml`. No version upgrades done in this pass | Last release before this: 1.0.4 (Jrxml language registration fix + schema-provider NPE hardening) |
+| 2026-11-13 | Claude Code (manual) | Scheduled the monthly cloud routine (section 2, Layer C) and triggered a test run | See the routine page for the test run's result |
