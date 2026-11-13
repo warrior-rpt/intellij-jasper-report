@@ -1,0 +1,24 @@
+# Dependabot proposes updates as PRs; nothing merges without the owner's approval.
+# See MAINTENANCE.md (Layer A).
+version: 2
+updates:
+  # Gradle plugins and libraries (IntelliJ Platform Gradle Plugin, JUnit, ...)
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 5
+    groups:
+      gradle-dependencies:
+        patterns:
+          - "*"
+
+  # Versions of the actions used in .github/workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
